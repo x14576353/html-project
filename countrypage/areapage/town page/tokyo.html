@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+function setToday() {
+var now   = new Date();
+var day   = now.getDate();
+var month = now.getMonth();
+var year  = now.getYear();
+if (year < 2000)    
+year = year + 1900; 
+this.focusDay = day;
+document.calControl.month.selectedIndex = month;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+}
+function isFourDigitYear(year) {
+if (year.length != 4) {
+alert ("Sorry, the year must be four-digits in length.");
+document.calControl.year.select();
+document.calControl.year.focus();
+} else { return true; }
+}
+function selectDate() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+displayCalendar(month, year);
+    }
+}
+
+function setPreviousYear() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+year--;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+   }
+}
+function setPreviousMonth() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+if (month == 0) {
+month = 11;
+if (year > 1000) {
+year--;
+document.calControl.year.value = year;
+}
+} else { month--; }
+document.calControl.month.selectedIndex = month;
+displayCalendar(month, year);
+   }
+}
+function setNextMonth() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+if (month == 11) {
+month = 0;
+year++;
+document.calControl.year.value = year;
+} else { month++; }
+document.calControl.month.selectedIndex = month;
+displayCalendar(month, year);
+   }
+}
+function setNextYear() {
+var year = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day = 0;
+var month = document.calControl.month.selectedIndex;
+year++;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+   }
+}
+function displayCalendar(month, year) {       
+month = parseInt(month);
+year = parseInt(year);
+var i = 0;
+var days = getDaysInMonth(month+1,year);
+var firstOfMonth = new Date (year, month, 1);
+var startingPos = firstOfMonth.getDay();
+days += startingPos;
+document.calButtons.calPage.value  =   " Su Mo Tu We Th Fr Sa";
+document.calButtons.calPage.value += "\n --------------------";
+for (i = 0; i < startingPos; i++) {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+document.calButtons.calPage.value += "   ";
+}
+for (i = startingPos; i < days; i++) {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+if (i-startingPos+1 < 10)
+document.calButtons.calPage.value += "0";
+document.calButtons.calPage.value += i-startingPos+1;
+document.calButtons.calPage.value += " ";
+}
+for (i=days; i<42; i++)  {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+document.calButtons.calPage.value += "   ";
+}
+document.calControl.Go.focus();
+}
+function getDaysInMonth(month,year)  {
+var days;
+if (month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)  days=31;
+else if (month==4 || month==6 || month==9 || month==11) days=30;
+else if (month==2)  {
+if (isLeapYear(year)) { days=29; }
+else { days=28; }
+}
+return (days);
+}
+function isLeapYear (Year) {
+if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+return (true);
+} else { return (false); }
+}
+
+
+        
+
+
+// End -->
+</SCRIPT>
+
+
+
+	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
+
+	<link href="towncss/towncsstokyo.css" type="text/css" rel="stylesheet"/>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  
+	<title>Cloud 9 Destination</title>
+	
+	 <script>
+    
+    function validate()
+      {
+      var agevalue=document.forms["form1"]["age"].value;
+      var namevalue=document.forms["form1"]["name"].value;
+	  var addressvalue=document.forms["form1"]["address"].value;
+	  var emailvalue=document.forms["form1"]["email"].value;
+	  var phonenumvalue=document.forms["form1"]["phonenum"].value;
+	  var packnumvalue=document.forms["form1"]["packnum"].value;
+	if (isNaN(agevalue))
+		{
+			alert('"' + agevalue + '" is not a number.');
+			return false;
+		}
+	else if (namevalue== null || namevalue == "")
+		{
+			alert("You must enter a name");
+			return false
+		}
+	else if (namevalue.length < 3)
+		{
+			alert("Invalid name entered - Must be more than 2 letters");
+			return false
+		}
+	else if (agevalue < 18)
+        	{
+        		alert(agevalue + " is too Young");
+        		return false;
+        	}
+        else
+        	{
+        	
+        	}
+			if (addressvalue == null || addressvalue == "")
+		{
+			alert(' please input your address.');
+			return false;
+		}
+		
+		if (phonenumvalue == null || phonenumvalue == "")
+		{
+			alert(' please input your phone number.');
+			return false;
+		}
+		
+		if (packnumvalue == null || packnumvalue == ""|| packnumvalue <= 0 || packnumvalue >=3)
+		{
+			alert(' wrong package input, Please input package number 1 or 2.');
+			return false;
+		}
+		
+		else if (packnumvalue == 1 ){
+		alert(' this packages cost is €1500 euro .');
+		return true;
+		}
+		 else
+        	{
+        		alert(' this packages cost is €1000 euro .');
+				return true;
+        	}
+}
+        
+  </script>
+  
+	
+</head>
+
+
+
+
+
+<body>
+
+<div class="wrapper">
+
+	<header>
+		<nav class="heads">
+			<ul class="heading">
+				<li><a href="../../../index.html">Home|</a></li>
+				<li><a href="../../countrypageasia.html">Asia|</a></li>
+				<li><a href="../japan.html">Japan|</a></li>
+				<li><a href="tokyo.html">Tokyo</a></li>
+			<ul>
+		</nav>
+		
+	</header>
+		<div id="headers">
+		<h1> Tokyo</h1>	
+		</div>
+		<section class="content">
+		<!-- this is where the side bar starts  -->
+
+				<!-- for the google maps i need all the contries/areas/hotels you are going to use to embed them.  -->
+
+				<!-- the calender -->
+		<div id="sidebar">
+		
+		<a href="http://www.hitwebcounter.com/" target="_blank">
+<img src="http://hitwebcounter.com/counter/counter.php?page=5895995&style=0025&nbdigits=3&type=page&initCount=0" title="visitors estimator" Alt="visitors estimator"   border="0" >
+</a><br/>
+<a href="http://www.hitwebcounter.com/" title="Stat hit counter" 
+target="_blank" style="font-family: sans-serif, Arial, Helvetica; 
+font-size: 9px; color: #9F9F97; text-decoration: none ;"><strong>Stat free hit counter</strong>
+</a>   
+  <BR/>
+				<button type="button"
+				onclick="document.getElementById('Time').innerHTML = Date()">
+				Click me to display Date and Time.</button>
+
+				<p id="Time"></p>
+				<big>Select-A-Month</big>
+				<FORM NAME="calControl" onSubmit="return false;" method="post">
+				<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0>
+				<TR><TD COLSPAN=7>
+				<SELECT NAME="month" onChange="selectDate()">
+				<OPTION>January</OPTION>
+				<OPTION>February</OPTION>
+				<OPTION>March</OPTION>
+				<OPTION>April</OPTION>
+				<OPTION>May</OPTION>
+				<OPTION>June</OPTION>
+				<OPTION>July</OPTION>
+
+				<OPTION>August</OPTION>
+				<OPTION>September</OPTION>
+				<OPTION>October</OPTION>
+				<OPTION>November</OPTION>
+				<OPTION>December</OPTION>
+				</SELECT>
+				<INPUT NAME="year" TYPE=TEXT SIZE=4 MAXLENGTH=4>
+				<INPUT TYPE="button" NAME="Go" value="Build!" onClick="selectDate()">
+				</TD>
+				</TR>
+				</FORM>
+				<FORM NAME="calButtons" method="post">
+				<TR><TD><textarea FONT="Courier" NAME="calPage" WRAP=no ROWS=8 COLS=22></textarea></TD><TR><TD>
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE=" <<  "  onClick="setPreviousYear()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  <  "  onClick="setPreviousMonth()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="Today"  onClick="setToday()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  >  "  onClick="setNextMonth()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  >> "  onClick="setNextYear()">
+				</TD></TR>
+				</TABLE></FORM></FONT>
+				<BR/>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207444.3029853299!2d139.74138045!3d35.66919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b857628235d%3A0xcdd8aef709a2b520!2sTokyo%2C+Japan!5e0!3m2!1sen!2sie!4v1417536062928" width="200" height="200" frameborder="0" style="border:0"></iframe>
+	
+	</div>
+			
+			
+			<article id="leftnav">
+		
+				<div id="para2"><h2 class="head">Shangri-La Hotel</h2></div>
+			
+			</article>
+
+
+			<article id="rightnav">
+			<p> Your room accommodation at the Best Available Rate<br/>
+Complimentary daily breakfast<br/>
+Complimentary Wi-Fi Internet access<br/>
+Dining credit of USD 50<br/>
+GC Award Points - for Golden Circle members only</p>
+			<p> code for package = 1 </p>
+			</article>
+			
+			<article id="leftbot">
+		
+		<div id="para3"><h2 class="head">Park Hyatt Tokyo</h2></div>
+		
+
+			</article>
+
+			<article id="rightbot">
+			<p> Accommodation in a Park Deluxe Room, in a Park View Room or in a Park Suite for up to 2<br/>
+Twilight Time at The Peak Bar per person per night (5 pm – 9 pm)<br/>
+Access to Club On The Park spa & fitness facilities<br/>
+Daily breakfast at Girandole or via Room Service</p>
+			<p> code for package = 1 </p>
+			</article>
+			
+			<!-- this is the form for the end to validate all of there info please leave at the very bottom of the page  -->
+  <div id="form">
+ <form name="form1" onsubmit="return validate()" method="post" class="form"/>
+ <fieldset>
+<legend>Personal information:</legend>
+<br />
+<div class="one">
+ <label class="title">Name: </label><input type="text" name="name" class="box"/><br/><br/>
+<label class="title">Age: </label><input type="text" name="age" class="box"/><br/><br/>
+<label class="title">Address: </label><br/><textarea name="address" rows="10" cols="30" class="box"></textarea><br/><br/>
+</div>
+<div class="two">
+<label class="title">Phone number: </label><input type="text" name="phonenum" class="box2"/><br/><br/>
+<label class="title">Email: </label><input type="email" name="email" class="box2"/><br/><br/>
+<label class="title">Package Number: </label><input type="text" name="packnum" class="box2"/><br/><br/>
+</form><form action="https://www.paypal.com/ie/home" >
+<input type="submit" value="Submit" /></fieldset>
+</div>
+</form>
+</div>
+	
+
+<div id="bottom">
+				<p> Click for more Information </p>
+				<ul class="botslink">
+				<a href="http://www.japan-guide.com/">Japan Guide</a>
+				<a href="http://www.seejapan.co.uk/jnto_consumer/index">SeeJapan</a>
+				
+				 </ul>
+		</div>		 
+ 		 
+ 
+ 
+ 
+ 
+		<footer>
+			<p> </p>
+		</footer>	
+	</section>	
+	</div>
+</body  onLoad="setToday()">
+</html>

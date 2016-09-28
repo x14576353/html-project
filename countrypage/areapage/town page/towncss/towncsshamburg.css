@@ -1,0 +1,226 @@
+body{
+	background-image: url("../../../../images/back2.jpg");
+	background-repeat: no-repeat;
+	}
+
+
+#wrapper{
+	margin: auto;
+	}
+
+header{
+background-image: url("../../../../images/header.png");
+	height: 200px;
+	width: 100%;
+	padding: 0px 0px 0px 0px; 
+	}
+
+nav{
+	width: 1000px;
+	margin-top: 10px;
+	}
+
+ul.heading {
+    list-style-type: none;
+	margin: auto;
+    padding: 0;
+	position: absolute;
+	top: 300px;
+	left: 20px;
+}
+
+li{
+    display: inline;
+	text-align: center;
+	font-size: 25px;
+	color: #406BED;
+}
+
+h1{ 
+	font-family: 'Poiret One', cursive;
+	text-shadow: 2px 2px 2px #0A142B;
+	color: #81A5E6;
+	margin: auto;
+	font-size: 60px;
+	text-align: center;
+	}
+
+#headers{
+	padding-top: 25px;
+	width: 100%;
+	background-color: transparents;
+	}
+
+h2{
+	text-align: center;
+	}
+
+.head{
+	font-size: 40px;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #0A142B;
+	text-align: center;
+	font-family: 'Josefin Sans', sans-serif;
+	}
+	
+.heads{ 	
+	display:table;
+	opacity:1;
+	}
+	
+
+
+
+#leftnav{
+	float: left;
+	margin-left: 50px;
+	margin-top: 39px;
+	padding: 5px;
+	background-image: url("../../../../images/hamhotel.jpg");
+	background-position: center;
+	width: 400px;
+	height: 250px;
+	border-style:  1px solid;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #cdcdcd;
+    }
+	
+
+
+a{
+	text-decoration: none;
+	color: #81A5E6;
+	font-family: 'Noto Sans', sans-serif;
+	}
+	
+#rightnav{
+	float: left;
+	margin-left: 50px;
+	margin-top: 39px;
+	padding: 5px;
+	width: 400px;
+	height: 250px;
+	}
+	
+
+
+#sidebar{
+	float: left;
+	margin-left: 50px;
+	margin-top: 39px;
+	padding: 5px;
+	background-color: #81A5E6;
+	clear: right;
+	width: 250px;
+	height: 570px;
+	border-radius: 5px;
+	text-align: center;
+	}
+	
+#leftbot{
+	float: left;
+	margin-top: 50px;
+	margin-left: 50px;
+	padding: 5px;
+	background-image: url("../../../../images/bashotel.jpg");
+	background-position: center;
+	width: 400px;
+	height: 250px;
+	border-style:  1px solid;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #cdcdcd;
+	}
+
+	
+#rightbot{
+	float: left;
+	margin-left: 50px;
+	margin-top: 50px;
+	padding: 5px;
+	width: 400px;
+	height: 250px;
+	}
+	
+#doublebot{
+	float: left;
+	margin-top: 50px;
+	margin-left: 50px;
+	padding: 5px;
+	background-image: url("../../../images/quezon.jpg");
+	background-position: center;
+	width: 400px;
+	height: 250px;
+	border-style:  1px solid;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #cdcdcd;
+	}
+
+	
+#doubleright{
+	float: left;
+	margin-left: 50px;
+	margin-top: 50px;
+	padding: 5px;
+	width: 400px;
+	height: 250px;
+	}
+
+
+#bottom{
+	padding-top: 5px;
+	clear: left;
+	margin: auto;
+	background-color: transparent;
+	
+	}
+
+	
+footer{
+	border-radius: 5px;
+	margin: auto;
+	background-color:  #81A5E6;
+	height: 50px;
+	padding: 2px;
+	}
+	
+	
+#para2{
+	font-size: 20px;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #0A142B;
+	opacity: 1;
+	font-family: Time Romans;
+	text-align: center;
+	}
+	
+	
+#para3{
+	font-size: 20px;
+	color: #ffffff;
+	opacity: 1;
+	text-shadow: 2px 2px 2px #0A142B;
+	font-family: Time Romans;
+	text-align: center;
+}
+	
+.title{ 
+    float: left;
+	text-align: left;
+	}
+	
+.one{
+	float: left;
+	margin-left: 30px;
+	}
+.two{
+	float: left;
+	margin-left: 20px;
+	}
+	
+.form{
+	float: left;
+	margin-left: 27px;
+	padding: 5px;
+	width: 750px;
+	}
+	

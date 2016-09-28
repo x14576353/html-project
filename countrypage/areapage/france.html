@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+function setToday() {
+var now   = new Date();
+var day   = now.getDate();
+var month = now.getMonth();
+var year  = now.getYear();
+if (year < 2000)    
+year = year + 1900; 
+this.focusDay = day;
+document.calControl.month.selectedIndex = month;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+}
+function isFourDigitYear(year) {
+if (year.length != 4) {
+alert ("Sorry, the year must be four-digits in length.");
+document.calControl.year.select();
+document.calControl.year.focus();
+} else { return true; }
+}
+function selectDate() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+displayCalendar(month, year);
+    }
+}
+
+function setPreviousYear() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+year--;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+   }
+}
+function setPreviousMonth() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+if (month == 0) {
+month = 11;
+if (year > 1000) {
+year--;
+document.calControl.year.value = year;
+}
+} else { month--; }
+document.calControl.month.selectedIndex = month;
+displayCalendar(month, year);
+   }
+}
+function setNextMonth() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+if (month == 11) {
+month = 0;
+year++;
+document.calControl.year.value = year;
+} else { month++; }
+document.calControl.month.selectedIndex = month;
+displayCalendar(month, year);
+   }
+}
+function setNextYear() {
+var year = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day = 0;
+var month = document.calControl.month.selectedIndex;
+year++;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+   }
+}
+function displayCalendar(month, year) {       
+month = parseInt(month);
+year = parseInt(year);
+var i = 0;
+var days = getDaysInMonth(month+1,year);
+var firstOfMonth = new Date (year, month, 1);
+var startingPos = firstOfMonth.getDay();
+days += startingPos;
+document.calButtons.calPage.value  =   " Su Mo Tu We Th Fr Sa";
+document.calButtons.calPage.value += "\n --------------------";
+for (i = 0; i < startingPos; i++) {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+document.calButtons.calPage.value += "   ";
+}
+for (i = startingPos; i < days; i++) {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+if (i-startingPos+1 < 10)
+document.calButtons.calPage.value += "0";
+document.calButtons.calPage.value += i-startingPos+1;
+document.calButtons.calPage.value += " ";
+}
+for (i=days; i<42; i++)  {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+document.calButtons.calPage.value += "   ";
+}
+document.calControl.Go.focus();
+}
+function getDaysInMonth(month,year)  {
+var days;
+if (month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)  days=31;
+else if (month==4 || month==6 || month==9 || month==11) days=30;
+else if (month==2)  {
+if (isLeapYear(year)) { days=29; }
+else { days=28; }
+}
+return (days);
+}
+function isLeapYear (Year) {
+if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+return (true);
+} else { return (false); }
+}
+// End -->
+</SCRIPT>
+
+
+	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
+
+	<link href="area css/areacssfrance.css" type="text/css" rel="stylesheet"/>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  
+	<title>Cloud 9 Destination</title>
+	
+</head>
+
+
+
+
+
+<body>
+
+<div class="wrapper">
+
+	<header>
+		<nav class="heads">
+			<ul class="heading">
+				<li><a href="../../index.html">Home|</a></li>
+				<li><a href="../countrypageeurope.html">Europe|</a></li>
+				<li><a href="france.html">France</a></li>
+			<ul>
+		</nav>
+		
+	</header>
+		<div id="headers">
+		<h1> France</h1>	
+		</div>
+		<section class="content">
+		<div id="sidebar">
+		<!-- this is the web counter -->
+<a href="http://www.hitwebcounter.com/" target="_blank">
+<img src="http://hitwebcounter.com/counter/counter.php?page=5895995&style=0025&nbdigits=3&type=page&initCount=0" title="visitors estimator" Alt="visitors estimator"   border="0" >
+</a><br/>
+<a href="http://www.hitwebcounter.com/" title="Stat hit counter" 
+target="_blank" style="font-family: sans-serif, Arial, Helvetica; 
+font-size: 9px; color: #9F9F97; text-decoration: none ;"><strong>Counter</strong>
+</a>   
+  <BR/>
+				<button type="button"
+				onclick="document.getElementById('Time').innerHTML = Date()">
+				Click me to display Date and Time.</button>
+
+				<p id="Time"></p>
+				<big>Select-A-Month</big>
+				<FORM NAME="calControl" onSubmit="return false;" method="post">
+				<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0>
+				<TR><TD COLSPAN=7>
+				<SELECT NAME="month" onChange="selectDate()">
+				<OPTION>January</OPTION>
+				<OPTION>February</OPTION>
+				<OPTION>March</OPTION>
+				<OPTION>April</OPTION>
+				<OPTION>May</OPTION>
+				<OPTION>June</OPTION>
+				<OPTION>July</OPTION>
+
+				<OPTION>August</OPTION>
+				<OPTION>September</OPTION>
+				<OPTION>October</OPTION>
+				<OPTION>November</OPTION>
+				<OPTION>December</OPTION>
+				</SELECT>
+				<INPUT NAME="year" TYPE=TEXT SIZE=4 MAXLENGTH=4>
+				<INPUT TYPE="button" NAME="Go" value="Build!" onClick="selectDate()">
+				</TD>
+				</TR>
+				</FORM>
+				<FORM NAME="calButtons" method="post">
+				<TR><TD><textarea FONT="Courier" NAME="calPage" WRAP=no ROWS=8 COLS=22></textarea></TD><TR><TD>
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE=" <<  "  onClick="setPreviousYear()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  <  "  onClick="setPreviousMonth()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="Today"  onClick="setToday()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  >  "  onClick="setNextMonth()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  >> "  onClick="setNextYear()">
+				</TD></TR>
+				</TABLE></FORM></FONT>
+				<BR/>
+				 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5602772.070080926!2d1.7191035999999973!3d46.711089999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a02933785731%3A0x6bfd3f96c747d9f7!2sFrance!5e0!3m2!1sen!2sie!4v1417692875744" width="200" height="200" frameborder="0" style="border:0"></iframe>
+	</div>
+			<!-- where the list of continents starts please use the css for the header and side bar but this is where the main bulk of the writing will be -->
+			
+			
+			<article id="leftnav">
+				<div id="para2"><h2 class="head">Paris</h2></div>
+			</article>
+
+
+			<article id="rightnav">
+			<p> Paris can be seen as thé most interesting city of Europe and probably 
+			even as one of the most amazing city’s worldwide. People from all over the
+			world travel to Paris to discover and experience this fairy-like city. 
+			Paris is the city of love, inspiration, art and fashion. The night scene, 
+			the Eiffel tower and the warm atmosphere will make you feel directly at home. 
+			Paris has a lot of interesting architecture and museums to offer, and is also 
+			a Walhalla for shopaholics. A city as Paris is one that everyone should visit and experience.</p>
+			</article>
+			
+			<article id="leftbot">
+		<div id="para3"><h2 class="head">Nice</h2></div>
+
+			</article>
+
+			<article id="rightbot">
+			<p>The city of Nice is located on the French Riviera in Provence-Alpes-Côte d'Azur. 
+			Blessed by a sunny, temperate climate, Nice attracts visitors from around the world.
+Among its many attractions are its beautiful beaches, lovely seaside promenade, interesting museums,
+ famous city landmarks and other tourist attractions.
+ Nice is a major air transportation hub in Europe. 
+ Several low-cost airlines offer flights to the Nice Cote d'Azur Airport from London, 
+ Paris and other cities. A high-speed rail service operates to Paris to Nice. 
+ Public transportation includes a tram system, ferry service and transit service.
+Day excursions are available from Nice to Antibes, Juan-les-Pins, Monte Carlo, Cannes and to other towns.
+ </p>
+			</article>
+			
+			<article id="doublebot">
+			<a href="town page/bourdeaux.html">
+		<div id="para4"><h2 class="head">Bordeaux</h2></div>
+			</a>
+			</article>
+
+			<article id="doubleright">
+			<p>The Port of the Moon, port city of Bordeaux in south-west France, 
+			is inscribed as an inhabited historic city, an outstanding urban and architectural ensemble,
+			created in the age of the Enlightenment, whose values continued up to the first half 
+			of the 20th century, with more protected buildings than any other French city except Paris.
+			It is also recognized for its historic role as a place of exchange of cultural values over 
+			more than 2,000 years, particularly since the 12th century due to commercial links with 
+			Britain and the Low Lands. </p>
+			</article>
+
+				<!-- this is where the side bar starts  -->
+
+				<!-- for the google maps i need all the contries/areas/hotels you are going to use to embed them.  -->
+
+				<!-- the calender -->
+	
+
+
+		<div id="bottom">
+				<p> Click for more Informations </p>
+				<ul class="botslink">
+				<a href="http://www.francetourism.com/">France Tourism</a>
+				<a href="http://www.france-voyage.com/en/">France Voyage</a>
+	
+				 </ul>
+		</div>		 
+ 
+ 
+ 
+ 
+		<footer>
+			<p></p>
+		</footer>	
+	</section>	
+	</div>
+</body  onLoad="setToday()">
+</html>

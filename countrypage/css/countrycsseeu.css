@@ -1,0 +1,290 @@
+body{
+	background-image: url("../../images/back2.jpg");
+	}
+
+#wrapper{
+	margin: auto;
+	}
+
+header{
+background-image: url("../../images/header.png");
+	height: 200px;
+	width: 100%;
+	padding: 0px 0px 0px 0px; 
+	}
+
+nav{
+	width: 1000px;
+	margin-top: 10px;
+	}
+
+ul.heading {
+    list-style-type: none;
+	margin: auto;
+    padding: 0;
+	position: absolute;
+	top: 300px;
+	left: 20px;
+}
+
+li{
+    display: inline;
+	text-align: center;
+	font-size: 25px;
+	color: #406BED;
+}
+
+h1{ 
+	font-family: 'Poiret One', cursive;
+	text-shadow: 2px 2px 2px #0A142B;
+	color: #81A5E6;
+	margin: auto;
+	font-size: 60px;
+	text-align: center;
+	}
+
+#headers{
+	padding-top: 25px;
+	width: 100%;
+	}
+
+h2{
+	text-align: center;
+	}
+
+
+
+.head{
+	font-size: 40px;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #0A142B;
+	text-align: center;
+	font-family: 'Josefin Sans', sans-serif;
+	}
+	
+.heads{ 	
+	width: 400px;
+	display:inline-block;
+	opacity:1;
+	}
+	
+
+
+
+#leftnav{
+	float: left;
+	margin-left: 50px;
+	margin-top: 39px;
+	padding: 5px;
+	background-image: url("../../images/italy.jpg");
+	background-position: center;
+	width: 400px;
+	height: 250px;
+	border-style:  1px solid;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #cdcdcd;
+    }
+	
+#leftnav:hover{
+    cursor: pointer;
+	opacity: 0.6;
+-webkit-transition: opacity;
+-webkit-transition-property: opacity;
+-webkit-transition-duration: 500ms;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-delay: initial;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-duration: 500ms;
+}
+
+a{
+	text-decoration: none;
+	color: #81A5E6;
+	font-family: 'Noto Sans', sans-serif;
+	}
+
+	
+#rightnav{
+	float: left;
+	margin-left: 50px;
+	margin-top: 39px;
+	padding: 5px;
+	background-image: url("../../images/france.jpg");
+	background-position: center right;
+	width: 400px;
+	height: 250px;
+	border-style:  1px solid;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #cdcdcd;
+	}
+	
+#rightnav:hover{
+    cursor: pointer;
+	opacity: 0.6;
+-webkit-transition: opacity;
+-webkit-transition-property: opacity;
+-webkit-transition-duration: 500ms;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-delay: initial;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-duration: 500ms;
+}
+
+#sidebar{
+	float: left;
+	margin-left: 50px;
+	margin-top: 39px;
+	padding: 5px;
+	background-color:  #81A5E6;
+	clear: right;
+	width: 250px;
+	height: 300px;
+	border-radius: 5px;
+	text-align: center;
+	}
+	
+#leftbot{
+	float: left;
+	margin-top: 50px;
+	margin-left: 50px;
+	padding: 5px;
+	background-image: url("../../images/germany.jpg");
+	background-position: center;
+	width: 400px;
+	height: 250px;
+	border-style:  1px solid;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #cdcdcd;
+	}
+
+#leftbot:hover{
+    cursor: pointer;
+	opacity: 0.6;
+-webkit-transition: opacity;
+-webkit-transition-property: opacity;
+-webkit-transition-duration: 500ms;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-delay: initial;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-duration: 500ms;
+}
+	
+#rightbot{
+	float: left;
+	margin-top: 50px;
+	margin-left: 50px;
+	padding: 5px;
+	background-image: url("../../images/sweden.jpg");
+	background-position: center;
+	width: 400px;
+	height: 250px;
+	border-style:  1px solid;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #cdcdcd;
+	}
+	
+#rightbot:hover{
+    cursor: pointer;
+	opacity: 0.6;
+-webkit-transition: opacity;
+-webkit-transition-property: opacity;
+-webkit-transition-duration: 500ms;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-delay: initial;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-duration: 500ms;
+}	
+
+#bottom{
+	padding-top: 5px;
+	clear: left;
+	margin: auto;
+	background-color: transparent;
+	
+	}
+
+	
+footer{
+	border-radius: 5px;
+	margin: auto;
+	background-color:  #81A5E6;
+	height: 50px;
+	padding: 2px;
+	}
+	
+#para{
+	font-size: 20px;
+	color: #ffffff;
+	opacity: 0;
+	text-shadow: 2px 2px 2px #0A142B;
+	font-family: Time Romans;
+	text-align: center;
+	-webkit-transition-delay: initial;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 200ms;
+}
+	
+
+#para:hover{
+	cursor: pointer;
+	opacity: 1;
+	}
+	
+#para2{
+	font-size: 20px;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #0A142B;
+	opacity: 0;
+	font-family: Time Romans;
+	text-align: center;
+	}
+	
+#para2:hover{
+	opacity: 1;
+	-webkit-transition-duration: 200ms;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-delay: initial;
+-webkit-transition-timing-function: ease-out;
+-webkit-transition-duration: 200ms;
+	}
+	
+#para3{
+	font-size: 20px;
+	color: #ffffff;
+	opacity: 0;
+	text-shadow: 2px 2px 2px #0A142B;
+	font-family: Time Romans;
+	text-align: center;
+	-webkit-transition-delay: initial;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 200ms;
+}
+	
+
+#para3:hover{
+	cursor: pointer;
+	opacity: 1;
+	}
+	
+#para4{
+	font-size: 20px;
+	color: #ffffff;
+	opacity: 0;
+	text-shadow: 2px 2px 2px #0A142B;
+	font-family: Time Romans;
+	text-align: center;
+	-webkit-transition-delay: initial;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 200ms;
+}
+	
+
+#para4:hover{
+	cursor: pointer;
+	opacity: 1;
+	}
+	
+
+
+
+		

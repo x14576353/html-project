@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+function setToday() {
+var now   = new Date();
+var day   = now.getDate();
+var month = now.getMonth();
+var year  = now.getYear();
+if (year < 2000)    
+year = year + 1900; 
+this.focusDay = day;
+document.calControl.month.selectedIndex = month;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+}
+function isFourDigitYear(year) {
+if (year.length != 4) {
+alert ("Sorry, the year must be four-digits in length.");
+document.calControl.year.select();
+document.calControl.year.focus();
+} else { return true; }
+}
+function selectDate() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+displayCalendar(month, year);
+    }
+}
+
+function setPreviousYear() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+year--;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+   }
+}
+function setPreviousMonth() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+if (month == 0) {
+month = 11;
+if (year > 1000) {
+year--;
+document.calControl.year.value = year;
+}
+} else { month--; }
+document.calControl.month.selectedIndex = month;
+displayCalendar(month, year);
+   }
+}
+function setNextMonth() {
+var year  = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day   = 0;
+var month = document.calControl.month.selectedIndex;
+if (month == 11) {
+month = 0;
+year++;
+document.calControl.year.value = year;
+} else { month++; }
+document.calControl.month.selectedIndex = month;
+displayCalendar(month, year);
+   }
+}
+function setNextYear() {
+var year = document.calControl.year.value;
+if (isFourDigitYear(year)) {
+var day = 0;
+var month = document.calControl.month.selectedIndex;
+year++;
+document.calControl.year.value = year;
+displayCalendar(month, year);
+   }
+}
+function displayCalendar(month, year) {       
+month = parseInt(month);
+year = parseInt(year);
+var i = 0;
+var days = getDaysInMonth(month+1,year);
+var firstOfMonth = new Date (year, month, 1);
+var startingPos = firstOfMonth.getDay();
+days += startingPos;
+document.calButtons.calPage.value  =   " Su Mo Tu We Th Fr Sa";
+document.calButtons.calPage.value += "\n --------------------";
+for (i = 0; i < startingPos; i++) {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+document.calButtons.calPage.value += "   ";
+}
+for (i = startingPos; i < days; i++) {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+if (i-startingPos+1 < 10)
+document.calButtons.calPage.value += "0";
+document.calButtons.calPage.value += i-startingPos+1;
+document.calButtons.calPage.value += " ";
+}
+for (i=days; i<42; i++)  {
+if ( i%7 == 0 ) document.calButtons.calPage.value += "\n ";
+document.calButtons.calPage.value += "   ";
+}
+document.calControl.Go.focus();
+}
+function getDaysInMonth(month,year)  {
+var days;
+if (month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)  days=31;
+else if (month==4 || month==6 || month==9 || month==11) days=30;
+else if (month==2)  {
+if (isLeapYear(year)) { days=29; }
+else { days=28; }
+}
+return (days);
+}
+function isLeapYear (Year) {
+if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+return (true);
+} else { return (false); }
+}
+// End -->
+</SCRIPT>
+
+
+
+
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	<link href="area css/areacssgermany.css" type="text/css" rel="stylesheet"/>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  
+	<title>Cloud 9 Destination</title>
+	
+</head>
+
+
+
+
+
+<body>
+
+<div class="wrapper">
+
+	<header>
+		<nav class="heads">
+			<ul class="heading">
+				<li><a href="../../index.html">Home|</a></li>
+				<li><a href="../countrypageeurope.html">Europe|</a></li>
+				<li><a href="Germany.html">Germany</a></li>
+			<ul>
+		</nav>
+		
+	</header>
+		<div id="headers">
+		<h1> Germany</h1>	
+		</div>
+		<section class="content">
+		<div id="sidebar">
+		<!-- this is the web counter -->
+<a href="http://www.hitwebcounter.com/" target="_blank">
+<img src="http://hitwebcounter.com/counter/counter.php?page=5895995&style=0025&nbdigits=3&type=page&initCount=0" title="visitors estimator" Alt="visitors estimator"   border="0" >
+</a><br/>
+<a href="http://www.hitwebcounter.com/" title="Stat hit counter" 
+target="_blank" style="font-family: sans-serif, Arial, Helvetica; 
+font-size: 9px; color: #9F9F97; text-decoration: none ;"><strong>Stat free hit counter</strong>
+</a>   
+  <BR/>
+		
+				<button type="button"
+				onclick="document.getElementById('Time').innerHTML = Date()">
+				Click me to display Date and Time.</button>
+
+				<p id="Time"></p>
+				<big>Select-A-Month</big>
+				<FORM NAME="calControl" onSubmit="return false;" method="post">
+				<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0>
+				<TR><TD COLSPAN=7>
+				<SELECT NAME="month" onChange="selectDate()">
+				<OPTION>January</OPTION>
+				<OPTION>February</OPTION>
+				<OPTION>March</OPTION>
+				<OPTION>April</OPTION>
+				<OPTION>May</OPTION>
+				<OPTION>June</OPTION>
+				<OPTION>July</OPTION>
+
+				<OPTION>August</OPTION>
+				<OPTION>September</OPTION>
+				<OPTION>October</OPTION>
+				<OPTION>November</OPTION>
+				<OPTION>December</OPTION>
+				</SELECT>
+				<INPUT NAME="year" TYPE=TEXT SIZE=4 MAXLENGTH=4>
+				<INPUT TYPE="button" NAME="Go" value="Build!" onClick="selectDate()">
+				</TD>
+				</TR>
+				</FORM>
+				<FORM NAME="calButtons" method="post">
+				<TR><TD><textarea FONT="Courier" NAME="calPage" WRAP=no ROWS=8 COLS=22></textarea></TD><TR><TD>
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE=" <<  "  onClick="setPreviousYear()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  <  "  onClick="setPreviousMonth()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="Today"  onClick="setToday()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  >  "  onClick="setNextMonth()">
+				<INPUT TYPE=BUTTON NAME="previousYear" VALUE="  >> "  onClick="setNextYear()">
+				</TD></TR>
+				</TABLE></FORM></FONT>
+				<BR/>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5124047.138376108!2d10.454119350000001!3d51.16422925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a721ec2b1be6b%3A0x75e85d6b8e91e55b!2sGermany!5e0!3m2!1sen!2sie!4v1417690668255" width="200" height="200" frameborder="0" style="border:0"></iframe>
+	</div>
+			<!-- where the list of continents starts please use the css for the header and side bar but this is where the main bulk of the writing will be -->
+			
+			
+			<article id="leftnav">
+			<a href="town page/hamburg.html">
+				<div id="para2"><h2 class="head">Hamburg</h2></div>
+			</a>
+			</article>
+
+
+			<article id="rightnav">
+			
+			<p> Hamburg is the second-largest city in Germany, and 
+			along with its central port, also the second-largest port
+			in Europe. Hamburg is the most populous city in the European
+			Union that is not a national capital. Hamburg`s proper name 
+			is the Free and Hanseatic City of Hamburg. It makes reference 
+			to Hamburg`s history as a member of the medieval Hanseatic League 
+			and as a free imperial city of the Holy Roman Empire, also to the 
+			fact that Hamburg is a city-state and one of the sixteen Federal States of Germany.
+			The city is a major tourist destination both for domestic and overseas visitors, with about 7.4 million overnight stays in 2007.</p>
+			</article>
+			
+			<article id="leftbot">
+		<div id="para3"><h2 class="head">Dusseldorf</h2></div>
+
+			</article>
+
+			<article id="rightbot">
+			<p> Dusseldorf has nevertheless emerged as one of Germany's most elegant, 
+			as well as commercial cities. Site of the country's most active stock-exchange, 
+			hundreds of banks and foreign based companies, this rambling city along the 
+			Rhein is a commercial/cultural oasis fueled by a huge cash flow.
+Seemingly to have reaped only the good from Germany's postwar "economic miracle", 
+a walk through certain sections of Dusseldorf is reminiscent of a stroll in Paris.
+ The stores, especially along Konigsalle, are chic, stylish and expensive.
+ The city's inhabitants live up to their native moniker as members of Germany's Fashion Capital. 
+.</p>
+			</article>
+			
+			<article id="doublebot">
+		<div id="para4"><h2 class="head">Dresden</h2></div>
+
+			</article>
+
+			<article id="doubleright">
+			<p> Dresden is the capital city of the Free State of Saxony in Germany. 
+			It is situated in a valley on the River Elbe, near the Czech border.
+			The Dresden conurbation is part of the Saxon Triangle metropolitan area with 2.4 million inhabitants.
+Dresden has a long history as the capital and royal residence for the Electors and Kings of Saxony,
+ who for centuries furnished the city with cultural and artistic splendor. The city was known 
+ as the Jewel Box, because of its baroque and rococo city center.</p>
+			</article>
+
+				<!-- this is where the side bar starts  -->
+
+				<!-- for the google maps i need all the contries/areas/hotels you are going to use to embed them.  -->
+
+				<!-- the calender -->
+	
+
+
+		<div id="bottom">
+				<p> Click for more Information </p>
+				<ul class="botslink">
+				<a href="http://www.germany.travel/en/index.html">Germany.Travel</a>
+				<a href="http://www.roughguides.com/destinations/europe/germany/">Rough Guide</a>
+				
+				 </ul>
+		</div>		 
+ 
+ 
+ 
+ 
+		<footer>
+			<p></p>
+		</footer>	
+	</section>	
+	</div>
+</body  onLoad="setToday()">
+</html>
